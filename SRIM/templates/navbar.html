@@ -1,13 +1,14 @@
 {%load static%}
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid d-flex">
+
+<nav class="navbar fixed-top navbar-expand-lg bg-dark">
+  <div class="container-fluid mx-4 custom-container">
     <img
       src="{% static 'assets/logo.png'%}"
       width="45"
       height="45"
-      style="margin-right: 10px"
+      style="margin-right: 10px; border-radius: 50px"
     />
-    <a class="navbar-brand" href="#">SRIM</a>
+    <a class="navbar-brand fs-1" href="#" style="color: white">SRIM</a>
     <button
       class="navbar-toggler"
       type="button"
@@ -19,13 +20,22 @@
     >
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <div class="collapse navbar-collapse justify-content-end mt-2">
+      <h4 style="color: white">SOCIETETEA ROMANA DE INFORMATICA MEDICALA</h4>
+    </div>
+    <div
+      class="collapse navbar-collapse justify-content-end"
+      id="navbarSupportedContent"
+    >
+      <ul class="navbar-nav mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a
+            class="nav-link active"
+            aria-current="page"
+            href="#"
+            style="color: white"
+            >Acasa</a
+          >
         </li>
         <li class="nav-item dropdown">
           <a
@@ -34,16 +44,92 @@
             role="button"
             data-bs-toggle="dropdown"
             aria-expanded="false"
+            style="color: white"
           >
-            Dropdown
+            Grupuri de lucru
           </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          <ul class="dropdown-menu" style="font-size: 12px">
+            <li>
+              <a class="dropdown-item" href="#"
+                >WG HECTOR - Health Education and Monitoring</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" href="#"
+                >WG NURSER - Nursing Informatics in Healthcare</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" href="#"
+                >WG MADMAN - Medical Data Management and Analysis</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" href="#"
+                >WG HEARTH - Healthcare Technologies</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" href="#"
+                >WG TENDER - Telemedicine and Telehealthcare</a
+              >
+            </li>
           </ul>
         </li>
+
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            style="color: white"
+          >
+            DESPRE SRIM
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Despre SRIM</a></li>
+            <li><a class="dropdown-item" href="#">Board</a></li>
+            <li><a class="dropdown-item" href="#">Membri</a></li>
+            <li><a class="dropdown-item" href="#">Statut</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="#">Premii</a></li>
+          </ul>
+        </li>
+
+        <a
+          class="nav-link"
+          href="#"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+          style="color: white"
+        >
+          Noutati
+        </a>
+
+        <a
+          class="nav-link"
+          href="#"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+          style="color: white"
+        >
+          Arhiva
+        </a>
+
+        <a
+          class="nav-link contact"
+          href="#"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+          style="color: white"
+        >
+          Contact
+        </a>
       </ul>
     </div>
   </div>

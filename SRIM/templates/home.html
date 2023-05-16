@@ -1,3 +1,21 @@
-{% extends 'index.html' %} {%block content%}
-<h1>Home template</h1>
+{% extends 'index.html' %} {%load static%} {%block content%}
+
+<div class="banner-container">
+  <img src={% static 'assets/banner-img.jpg'%} class='banner-img'/>
+  <div class="main-conference-wrapper">
+    <h1 class="main-header">Conferinta RoMedinf 2023</h1>
+    <h3 class="main-description">
+      Healthcare green digital Ecosystems: From Data Analyis to Digital Twin
+    </h3>
+    <h4 class="main-date">14-15 Septembrie 2023</h4>
+    <a
+      href="https://sites.google.com/view/romedinf-2023/?pli=1"
+      target="_blank"
+    >
+      <button class="main-btn">Verifică</button>
+    </a>
+  </div>
+</div>
+<div class="banner-container"></div>
+
 {%endblock content%}

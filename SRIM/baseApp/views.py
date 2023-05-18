@@ -1,11 +1,13 @@
 from django.shortcuts import render
-
+from .models import Conference
 # Create your views here.
 
 
 def home(request):
-    return render(request, 'home.html')
+    conferences = Conference.objects.all()
+    context = {'conferences': conferences}
+    return render(request, 'home.html', context)
 
 
-def room(request):
-    return render(request, 'room.html')
+def contact(request):
+    return render(request, 'contact.html')

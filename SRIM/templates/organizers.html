@@ -1,0 +1,85 @@
+{% extends 'index.html' %} {%load static%} {%block content%}
+<div class="organizers-container">
+  <h1>ABOUT ORGANIZERS</h1>
+  <div class="organizers-wrapper">
+    <img
+      src="http://romedinf.srimed.ro/wp-content/uploads/2023/03/Image20230327212353.png"
+      class="organizer-img"
+    />
+    <div class="organizer-info">
+      <h3>Romanian Society of Medical Informatics</h3>
+      <p class="organizer-text">
+        Romanian Society of Medical Informatics (RSMI) is a scientific,
+        professional and non-governmental organization. RSMI aims to actively
+        promote research by growing the medical informatics community, a mix of
+        academic, commercial, and medical professionals.
+      </p>
+      <p class="organizer-text">
+        SRIM has members with diverse backgrounds: medical professionals, IT
+        experts, engineers, mathematicians and other professionals working in
+        the field of medical informatics.
+      </p>
+    </div>
+  </div>
+
+  <div class="organizers-wrapper">
+    <div class="organizer-info">
+      <h3>Politehnica University of Timișoara</h3>
+      <p class="organizer-text">
+        Established in 1920, shortly after the union of Romanian territories, in
+        a European context marked by the redefinition of states and by the
+        aftermath of World War I, the Polytechnic School in Timisoara – as was
+        originally called – was the answer to one of the requirements of the
+        Romanian society of the time, namely the formation of engineers.
+      </p>
+      <p class="organizer-text">
+        Interested in responding to the labor market demands and to the need for
+        long-life training and development required by the complex challenges of
+        the modern society, the portfolio of specializations offered by the
+        Politehnica University Timisoara meets the needs of contemporary
+        society, reflecting the close relationship the university holds with the
+        socio-economic environment.
+      </p>
+    </div>
+    <img
+      src="http://romedinf.srimed.ro/wp-content/uploads/2023/04/download.png"
+      class="organizer-img"
+    />
+  </div>
+
+  <div class="organizers-wrapper">
+    <img
+      class="organizer-img"
+      src="http://romedinf.srimed.ro/wp-content/uploads/2023/03/Logo-UVT-2017-02.png"
+    />
+    <div class="organizer-info">
+      <h3>West Univiersity of Timișoara</h3>
+      <p class="organizer-text">
+        The West University of Timișoara (UVT) advocates for an education
+        correlated with the immediate needs of the labor market, an education
+        that aims, in addition to scientific performance and socio-economic
+        employment, to reveal the human personality as a whole.
+      </p>
+      <p class="organizer-text">
+        West University of Timișoara has its foundations on the sustainable
+        tradition of higher education supported by the establishment in
+        Timișoara of the Faculty of Philosophy (1841) and then of the Faculty of
+        Law (1845). Today, the West University of Timișoara offers 73
+        undergraduate programs and 87 master’s degree programs in 34 fields, and
+        doctoral studies in 12 fields.
+      </p>
+    </div>
+  </div>
+
+  <h1>SCIENTIFIC PROGRAM CHAIRS</h1>
+  <div class="programs-container">
+    {%for person in persons%}
+    <div class="programs-wrapper">
+      <img src="{{person.img.url}}" class="avatar" />
+      <h6>{{person.name}}</h6>
+      <p>{{person.title}}</p>
+    </div>
+    {%endfor%}
+  </div>
+</div>
+{%endblock content%}

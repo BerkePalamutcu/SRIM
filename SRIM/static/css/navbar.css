@@ -2,6 +2,10 @@
   font-size: 24px;
 }
 
+.bg-dark {
+  background-color: #1a3729 !important;
+}
+
 .navbar-toggler {
   color: white !important;
   background-color: white !important;

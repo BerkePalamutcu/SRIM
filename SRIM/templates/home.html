@@ -13,6 +13,13 @@
       target="_blank"
     >
       <button class="main-btn">Verifică</button>
+       </br>
+       {% if latest_bulletin %}
+       <a href="{{ latest_bulletin.bulletinMagazine.url }}" target="_blank" class="btn btn-outline main-btn">
+          cel mai recent buletin informativ
+       </a>
+     {% endif %}
+     
     </a>
   </div>
 </div>
@@ -37,14 +44,35 @@
     {%endif%}
     <div class="card-body">
       <h5 class="card-title">{{conference.name}}</h5>
+      <h6>{{conference.dateStart}} - {{conference.dateEnd}}</h6>
       <p class="card-text">{{conference.description}}</p>
-      <a
-        href="{{conference.link}}"
-        target="_blank"
-        class="btn btn-outline-primary"
-        >linkul conferinței</a
-      >
+
+        <a
+          href="{{conference.link}}"
+          target="_blank"
+          class="btn btn-outline-primary"
+          >linkul conferinței</a
+        >
+
     </div>
   </div>
-  {% endfor %%} {%endblock content%}
-</div>
+  {% endfor %%}
+  <div class='links-container text-center'>
+    <h2>Linkuri</h2>
+    <div class="list-group">
+      <a href="https://rohealth.ro/" target="_blank" class="list-group-item list-group-item-action">RoHealth - Clusterul pentru Sanatate si Bioeconomie</a>
+      <a href="https://efmi.org/" target="_blank" class="list-group-item list-group-item-action">EFMI - European Federation of Medical Informatics</a>
+      <a href="https://imia-medinfo.org/wp/" target="_blank" class="list-group-item list-group-item-action">IMIA - International Medical Informatics Association</a>
+      <a href="https://amia.org/" target="_blank" class="list-group-item list-group-item-action">AMIA</a>
+      <a href="https://www.sciencedirect.com/journal/international-journal-of-medical-informatics" target="_blank" class="list-group-item list-group-item-action">International Journal of Medical Informatics</a>
+      <a href="https://www.thieme-connect.com/products/ejournals/journal/10.1055/s-00035037" target="_blank" class="list-group-item list-group-item-action">Methods of Information in Medicine</a>
+      <a href="https://ami.info.umfcluj.ro/index.php/AMI" target="_blank" class="list-group-item list-group-item-action">Applied Medical Informatics</a>
+      <a href="https://www.politicidesanatate.ro/" target="_blank" class="list-group-item list-group-item-action">Politici de Sănătate</a>
+      <a href="https://www.ms.ro/ro/" target="_blank"  class="list-group-item list-group-item-action">Ministerul Sănătăţii</a>
+      <a href="https://www.comunicatii.gov.ro/" target="_blank"  class="list-group-item list-group-item-action">Ministerul pentru Societatea Informaţională</a>
+    </div>
+  </div>
+  
+
+  {%endblock content%}
+

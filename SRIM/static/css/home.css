@@ -67,6 +67,10 @@ h1 {
   margin: 1rem; /* half of gap, applied to all sides */
 }
 
+.links-container {
+  margin-bottom: 5rem;
+}
+
 /* Mobile view: when the viewport is 600px or smaller */
 @media screen and (max-width: 600px) {
   .card {

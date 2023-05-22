@@ -1,0 +1,39 @@
+.organizers-container {
+  margin-top: 6rem;
+  height: 100%;
+  padding-bottom: 5rem;
+}
+.organizers-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.organizer-img {
+  display: flex;
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+}
+
+.organizer-text {
+  max-width: 600px;
+}
+
+.programs-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h6 {
+  display: flex;
+}
+
+.avatar {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+}

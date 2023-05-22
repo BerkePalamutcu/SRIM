@@ -2,6 +2,9 @@ from django.contrib import admin
 
 # Register your models here.
 
-from .models import Conference
+from .models import Conference, Bulletin, Person
 
-admin.site.register(Conference)
+
+@admin.register(Conference, Bulletin, Person)
+class AuthorAdmin(admin.ModelAdmin):
+    pass

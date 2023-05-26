@@ -35,3 +35,35 @@ class Person(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class News(models.Model):
+    name = models.CharField(max_length=399, null=True)
+    description = models.TextField(null=True, blank=True)
+    document = models.FileField(null=True, blank=True)
+    img_url = models.ImageField(null=True, blank=True)
+    news_link = models.TextField(null=True, blank=True)
+
+    def __str__(self):
+        return self.name
+
+
+class Archive(models.Model):
+    name = models.CharField(max_length=399, null=True, blank=True)
+    description = models.TextField(null=True, blank=True)
+    document = models.FileField(null=True, blank=True)
+    img_url = models.ImageField(null=True, blank=True)
+    link = models.TextField(null=True, blank=True)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateField(auto_now=True)
+
+    def __str__(self):
+        return self.name
+
+
+class Status(models.Model):
+    name = models.CharField(max_length=99, null=True, blank=True)
+    document = models.FileField()
+
+    def __str__(self):
+        return self.name

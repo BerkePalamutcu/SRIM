@@ -1,0 +1,18 @@
+{%extends 'index.html'%} {%block content%}
+<div class="archive-container">
+  <h1 class="text-center">Arhiva</h1>
+  {%for item in archives%}
+  <div class="blog-card">
+    <h2 class="blog-title">{{item.name}}</h2>
+    <p class="blog-description">{{item.description}}</p>
+    {%if item.document%}
+    <a href="{{item.document.url}}" target="_blank" class="blog-link"
+      >Mai Multe Detailii</a
+    >
+    {%endif%} {%if item.link%}
+    <a href="{{item.link}}" target="_blank" class="blog-link">Linkuri</a>
+    {%endif%}
+  </div>
+  {%endfor%}
+</div>
+{%endblock content%}

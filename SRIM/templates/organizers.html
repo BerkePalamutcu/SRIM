@@ -1,6 +1,6 @@
 {% extends 'index.html' %} {%load static%} {%block content%}
-<div class="organizers-container">
-  <h1>ABOUT ORGANIZERS</h1>
+<div class='organizers-container'>
+  <h1 class='text-center'>ABOUT ORGANIZERS</h1>
   <div class="organizers-wrapper">
     <img
       src="http://romedinf.srimed.ro/wp-content/uploads/2023/03/Image20230327212353.png"
@@ -23,6 +23,10 @@
   </div>
 
   <div class="organizers-wrapper">
+    <img
+    src="http://romedinf.srimed.ro/wp-content/uploads/2023/04/download.png"
+    class="organizer-img"
+  />
     <div class="organizer-info">
       <h3>Politehnica University of Timișoara</h3>
       <p class="organizer-text">
@@ -41,10 +45,7 @@
         socio-economic environment.
       </p>
     </div>
-    <img
-      src="http://romedinf.srimed.ro/wp-content/uploads/2023/04/download.png"
-      class="organizer-img"
-    />
+
   </div>
 
   <div class="organizers-wrapper">
@@ -52,7 +53,7 @@
       class="organizer-img"
       src="http://romedinf.srimed.ro/wp-content/uploads/2023/03/Logo-UVT-2017-02.png"
     />
-    <div class="organizer-info">
+    <div class="organizer-info space-below">
       <h3>West Univiersity of Timișoara</h3>
       <p class="organizer-text">
         The West University of Timișoara (UVT) advocates for an education
@@ -70,16 +71,64 @@
       </p>
     </div>
   </div>
-
-  <h1>SCIENTIFIC PROGRAM CHAIRS</h1>
+</div>
+<div class="programs-container-wrapper">
+  <h1 class='text-center'>SCIENTIFIC PROGRAM CHAIRS</h1>
   <div class="programs-container">
-    {%for person in persons%}
+    {%for person in persons%} {%if person.organization == 'scientific_chair'%}
     <div class="programs-wrapper">
+      {%if person.img %}
       <img src="{{person.img.url}}" class="avatar" />
+      {%else%}
+      <img
+        src="https://www.pinclipart.com/picdir/big/148-1486972_mystery-man-avatar-circle-clipart.png"
+        class="avatar"
+      />
+      {%endif%}
       <h6>{{person.name}}</h6>
       <p>{{person.title}}</p>
     </div>
-    {%endfor%}
+    {%endif%} {%endfor%}
   </div>
+</div>
+</div>
+
+<div class="programs-container-wrapper">
+<h1 class='text-center'>SCIENTIFIC PROGRAM COMIMITEE</h1>
+<div class="programs-container">
+{%for person in persons%} {%if person.organization == 'scientific_committee'%}
+<div class="programs-wrapper">
+  {%if person.img %}
+  <img src="{{person.img.url}}" class="avatar" />
+  {%else%}
+  <img
+    src="https://www.pinclipart.com/picdir/big/148-1486972_mystery-man-avatar-circle-clipart.png"
+    class="avatar"
+  />
+  {%endif%}
+  <h6>{{person.name}}</h6>
+  <p>{{person.title}}</p>
+</div>
+{%endif%} {%endfor%}
+</div>
+
+
+<div class='programs-container-wrapper last'>
+<h1 class='text-center'>ORGANIZING COMIMITEE</h1>
+<div class="programs-container">
+{%for person in persons%} {%if person.organization == 'organizing_committee'%}
+<div class="programs-wrapper">
+  {%if person.img %}
+  <img src="{{person.img.url}}" class="avatar" />
+  {%else%}
+  <img
+    src="https://www.pinclipart.com/picdir/big/148-1486972_mystery-man-avatar-circle-clipart.png"
+    class="avatar"
+  />
+  {%endif%}
+  <h6>{{person.name}}</h6>
+  <p>{{person.title}}</p>
+</div>
+{%endif%} {%endfor%}
 </div>
 {%endblock content%}

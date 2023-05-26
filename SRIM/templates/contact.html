@@ -1,3 +1,25 @@
 {%extends 'index.html'%} {%block content%}
-<h1>Contact Template</h1>
+<div class="contact-container">
+  <div class="contact-info">
+    <h2 class="text-center">Contact Info</h2>
+    <p><strong>Cod fiscal:</strong> 9253945</p>
+    <p>
+      <strong>Email:</strong>
+      <a href="mailto:romedinf.secretariat@gmail.com"
+        >romedinf.secretariat@gmail.com</a
+      >
+    </p>
+  </div>
+
+  <div class="contact-form">
+    <h2 class="text-center">Contact Us</h2>
+    <form method="POST">
+      {% csrf_token %}
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</div>
 {%endblock content%}

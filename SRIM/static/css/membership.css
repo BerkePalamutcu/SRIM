@@ -1,0 +1,19 @@
+.membership-container {
+  max-width: 800px;
+  margin: 7rem auto 0 auto;
+  padding-bottom: 5rem;
+  text-align: center;
+}
+
+.section {
+  border: 2px solid #000;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .membership-container {
+    margin: 6rem 1rem;
+  }
+}

@@ -1,5 +1,4 @@
 {%load static%}
-
 <nav class="navbar fixed-top navbar-expand-lg bg-dark">
   <div class="container-fluid mx-4 custom-container">
     <img
@@ -28,7 +27,7 @@
       id="navbarSupportedContent"
     >
       <ul class="navbar-nav mb-2 mb-lg-0">
-        <li class="nav-item">
+        <li class="nav-item navItem">
           <a
             class="nav-link active"
             aria-current="page"
@@ -60,34 +59,27 @@
             DESPRE SRIM
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Despre SRIM</a></li>
-            <li><a class="dropdown-item" href="#">Board</a></li>
-            <li><a class="dropdown-item" href="#">Membri</a></li>
-            <li><a class="dropdown-item" href="#">Statut</a></li>
+            <li><a class="dropdown-item" href="/about">Despre SRIM</a></li>
+            <li><a class="dropdown-item" href="/board">Board</a></li>
+            <li><a class="dropdown-item" href="/membership">Membri</a></li>
+            <li>
+              <a
+                class="dropdown-item"
+                href="{{status_report.document.url}}"
+                target="_blank"
+                >Statut</a
+              >
+            </li>
             <li><hr class="dropdown-divider" /></li>
             <li><a class="dropdown-item" href="#">Premii</a></li>
           </ul>
         </li>
 
-        <a
-          class="nav-link"
-          href="#"
-          role="button"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-          style="color: white"
-        >
+        <a class="nav-link" href="/news" role="button" style="color: white">
           Noutati
         </a>
 
-        <a
-          class="nav-link"
-          href="#"
-          role="button"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-          style="color: white"
-        >
+        <a class="nav-link" href="/archives" role="button" style="color: white">
           Arhiva
         </a>
 

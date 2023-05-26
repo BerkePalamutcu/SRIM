@@ -1,0 +1,18 @@
+{% extends 'index.html' %} {%load static%} {%block content%}
+<div class="news-container">
+  <h1 class="text-center">Noutăți</h1>
+  {%for info in news%}
+  <div class="blog-card">
+    <h2 class="blog-title">{{info.name}}</h2>
+    <p class="blog-description">{{info.description}}</p>
+    {%if info.document%}
+    <a href="{{info.document.url}}" target="_blank" class="blog-link"
+      >Mai Multe Detailii</a
+    >
+    {%endif%} {%if info.img_url%}
+    <a href="{{info.img_url}}" target="_blank" class="blog-link">Linkuri</a>
+    {%endif%}
+  </div>
+  {%endfor%}
+</div>
+{%endblock content%}

@@ -1,0 +1,14 @@
+.about-container {
+  margin-top: 7rem;
+  padding: 1rem;
+}
+
+.about-title,
+.about-header,
+.about-text {
+  margin-bottom: 15px;
+}
+
+.about-text:last-child {
+  padding-bottom: 5rem;
+}

@@ -8,6 +8,7 @@
   justify-content: center;
   align-items: center;
   margin-top: 3rem;
+  margin-bottom: 5rem;
 }
 
 .organizer-img {
@@ -93,6 +94,7 @@
 
 .last {
   padding-bottom: 5rem;
+  margin-top: 5rem;
 }
 
 /* Mobile responsive styles */

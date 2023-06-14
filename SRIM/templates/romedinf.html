@@ -1,0 +1,26 @@
+{%extends 'index.html'%} {%block content%}
+
+<div class="listing-container">
+  <h1 class="listing-title">Ediții anterioare RoMedINF</h1>
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-6 col-lg-4">
+      <ul class="list-group">
+        {% for item in previous_listing %}
+        <li class="list-group-item">
+          {% if item.event_link %}
+          <a href="{{ item.event_link }}" target="_blank" class="list-link"
+            >{{ item.year }} - {{ item.location }}</a
+          >
+          {% elif item.event_document %}
+          <a href="{{ item.event_document.url }}" download class="list-link"
+            >{{ item.year }} - {{ item.location }}</a
+          >
+          {% else %} {{ item.year }} - {{ item.location }} {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+
+{%endblock content%}

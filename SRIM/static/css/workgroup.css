@@ -1,0 +1,158 @@
+.workgroup-container {
+  margin: 8rem 5rem;
+}
+
+.workgroup-title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.workgroup-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.workgroup-coordinator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.coordinator-avatar {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50px;
+  margin-bottom: 1rem;
+}
+
+.instution-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.instution-subtitle {
+  display: flex;
+  justify-content: center;
+}
+.instution-name {
+  display: flex;
+  justify-content: center;
+}
+.instution-image {
+  display: flex;
+  margin: auto;
+  object-fit: cover;
+}
+
+.location-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+
+.location-subtitle {
+  display: flex;
+  justify-content: center;
+}
+
+.location-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.location-image {
+  display: flex;
+  margin: auto;
+  object-fit: cover;
+  width: 400px;
+}
+
+.members-container {
+  /* display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; */
+  display: grid;
+  grid-template-columns: 0.5fr 200px 0.5fr;
+}
+
+.members-wrapper {
+  text-align: center;
+}
+
+.member-avatar {
+  max-width: 100%;
+  height: auto;
+}
+
+.members-subtitle {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 1024px) {
+  /* Tablets */
+  .workgroup-container {
+    margin: 5rem 2rem;
+  }
+
+  .location-image,
+  .instution-image {
+    width: 300px;
+  }
+
+  .members-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .coordinator-avatar {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /* Medium devices (tablets, 768px and up) */
+  .workgroup-container {
+    margin: 3rem 1rem;
+  }
+
+  .members-container {
+    grid-template-columns: 1fr;
+  }
+
+  .coordinator-avatar {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  /* Small devices (phones, 576px and up) */
+  .workgroup-container {
+    margin: 2rem 0.5rem;
+    padding-bottom: 5rem;
+    padding-top: 3rem;
+  }
+
+  .location-image,
+  .instution-image {
+    width: 250px;
+  }
+
+  .coordinator-avatar {
+    width: 50px;
+    height: 50px;
+  }
+}

@@ -15,6 +15,40 @@ ul {
   list-style-position: inside;
 }
 
-.title {
+.board-title {
   font-weight: bold;
+}
+
+.board-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5rem;
+}
+
+ul > .board-listing {
+  list-style: none !important;
+  display: flex;
+}
+
+.board-subtitle {
+  padding-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.member {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.board-avatar {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  object-fit: cover;
+  border-radius: 50px;
+  align-items: center;
+  justify-content: center;
 }

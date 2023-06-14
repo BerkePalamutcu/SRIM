@@ -1,0 +1,54 @@
+{%extends 'index.html'%}{% load custom_tags %} {%block content%}
+<div class="workgroup-container">
+  <h1 class="workgroup-title">{{workgroup.name}}</h1>
+  <div class="workgroup-wrapper">
+      {%if workgroup.coordinator_img%}
+      <img src="{{workgroup.coordinator_img.url}}" class="coordinator-avatar" />
+      {%else%}
+      <img
+      src="https://www.pinclipart.com/picdir/big/148-1486972_mystery-man-avatar-circle-clipart.png"
+      class="coordinator-avatar"
+      />
+      {%endif%}
+      <h3 class="workgroup-coordinator">
+        Coordinator: {{ workgroup.coordinator}}
+      </h3>
+      <h4 class='workgroup-title'>{{workgroup.email}}</h4>
+  </div>
+
+  <div class-'instution-wrapper'>
+    <h3 class='instution-subtitle'>Instituția</h3>
+    <p class='instution-name'>{{workgroup.instution}}</p>
+    {%if workgroup.instution_image%}
+    <img src="{{workgroup.instution_image.url}}"  class='instution-image'/>
+    {%endif%}
+  </div>
+
+  <div class='location-wrapper'>
+    <h3 class='location-subtitle'>Localitatea</h3>
+    <p class='location-name'>{{workgroup.location}}</p>
+    {%if workgroup.location_image%}
+    <img src="{{workgroup.location_image.url}}"  class='location-image'/>
+    {%endif%}
+  </div>
+
+  <h3 class='members-subtitle'>MEMBRII</h3>
+  <div class='members-container'>
+    {% for member in members %}
+    {% if member.workshop_list and 'WG MADMAN' in member.workshop_list %}
+    <div class='members-wrapper'>
+        {%if member.member_img%}
+        <img src="{{member.member_img.url}}" class='member-avatar'/>
+        {%else%}
+        <img
+      src="https://www.pinclipart.com/picdir/big/148-1486972_mystery-man-avatar-circle-clipart.png"
+      class="coordinator-avatar"
+      />
+      {%endif%}
+    <p>{{member}}</p>
+    </div>
+    {% endif %}
+    {% endfor %}
+  </div>
+</div>
+{%endblock content%}

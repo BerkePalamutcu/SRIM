@@ -1,5 +1,7 @@
 {%load static%}
-<nav class="navbar fixed-top navbar-expand-lg bg-dark">
+<nav
+  class="navbar fixed-top navbar-expand-lg {%if dynamic_navbar == 'navbar-dynamic'%}dynamic-navbar {%else%}bg-dark{%endif%}"
+>
   <div class="container-fluid mx-4 custom-container">
     <img
       src="{% static 'assets/logo.png'%}"
@@ -71,11 +73,19 @@
               >
             </li>
             <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Premii</a></li>
+            <li>
+              <a class="dropdown-item" href="/grupuri-lucru"
+                >Grupuri de lucru</a
+              >
+            </li>
           </ul>
         </li>
 
-        <a class="nav-link" href="/news" role="button" style="color: white">
+        <a class="nav-link" href="/romedinf" role="button" style="color: white">
+          RoMedInf
+        </a>
+
+        <a class="nav-link" href="/blog" role="button" style="color: white">
           Noutati
         </a>
 

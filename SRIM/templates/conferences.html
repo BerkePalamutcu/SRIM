@@ -1,0 +1,37 @@
+{% extends 'index.html' %} {%load static%} {%block content%} {%if conferences%}
+<h1 class="title">conferințele dintre datele selectate</h1>
+
+<div class="cards-container">
+  {% for conference in conferences %}
+  <div class="card">
+    {%if conference.imgUrl%}
+    <img
+      src="{{conference.imgUrl.url}}"
+      class="card-img-top"
+      alt="{{conference.name}}"
+    />
+    {%else%}
+    <img
+      src="https://images.unsplash.com/photo-1477281765962-ef34e8bb0967?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1033&q=80"
+      class="card-img-top"
+      alt="{{conference.name}}"
+    />
+    {%endif%}
+    <div class="card-body">
+      <h5 class="card-title">{{conference.name}}</h5>
+      <h6>{{conference.dateStart}} - {{conference.dateEnd}}</h6>
+      <p class="card-text">{{conference.description}}</p>
+
+      <a
+        href="{{conference.link}}"
+        target="_blank"
+        class="btn btn-outline-primary"
+        >linkul conferinței</a
+      >
+    </div>
+  </div>
+  {% endfor %%}
+</div>
+{%else%}
+<h1 class="title">Nu există conferințe între datele selectate</h1>
+{%endif%} {%endblock%}

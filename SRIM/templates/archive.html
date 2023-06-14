@@ -1,0 +1,28 @@
+{% extends 'index.html' %} {%load static%} {%block content%}
+<article class="blog-container">
+  {% comment %}
+  <div class="blog-header-wrapper">
+    <img class="blog-logo" src="{%static 'assets/srimlogo.png'%}" />
+  </div>
+  {% endcomment %}
+  <div>
+    <div class="blog-author-wrapper">
+      {%if archive.author_img%}
+      <img class="blog-avatar" src="{{archive.author_img.url}}" />
+      {%else%}
+      <img
+        class="blog-avatar"
+        src="https://www.pinclipart.com/picdir/big/148-1486972_mystery-man-avatar-circle-clipart.png"
+      />
+      {%endif%}
+      <h6 class="blog-owner">
+        {{ archive.author_title|add:' ' }}{{ archive.author }}
+      </h6>
+    </div>
+    <h1 class="blog-title">{{ archive.title }}</h1>
+    <p>{{ archive.content | safe}}</p>
+    <p>Published at: {{ archive.created }}</p>
+    <a href="{% url 'archives' %}" class="blog-navigation">BACK TO ARCHIVES</a>
+  </div>
+</article>
+{%endblock%}

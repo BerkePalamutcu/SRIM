@@ -1,5 +1,5 @@
 .about-container {
-  margin-top: 7rem;
+  margin: 7rem;
   padding: 1rem;
 }
 
@@ -11,4 +11,40 @@
 
 .about-text:last-child {
   padding-bottom: 5rem;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 1024px) {
+  /* Tablets */
+  .about-container {
+    margin: 5rem;
+    padding: 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /* Medium devices (tablets, 768px and up) */
+  .about-container {
+    margin: 3rem;
+    padding: 0.5rem;
+  }
+  .about-title,
+  .about-header,
+  .about-text {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  /* Small devices (phones, 576px and up) */
+  .about-container {
+    margin: 2rem;
+    padding: 5rem 0.5rem;
+  }
+  .about-title,
+  .about-header,
+  .about-text {
+    font-size: 0.8rem;
+  }
 }

@@ -1,0 +1,43 @@
+.lucru-container {
+  margin-top: 10rem;
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
+
+.lucru-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.lucru-title {
+  text-align: center;
+}
+
+.animated {
+  animation: fade-in 1.2s ease-in-out both;
+}
+
+@media screen and (max-width: 768px) {
+  .lucru-container {
+    margin-top: 5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .lucru-wrapper {
+    flex-direction: column;
+    padding-bottom: 5rem;
+  }
+
+  .card {
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .lucru-container {
+    margin-top: 5rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+}

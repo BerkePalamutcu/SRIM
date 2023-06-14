@@ -1,6 +1,6 @@
 {% extends 'index.html' %} {%load static%} {%block content%}
 
-<div class="banner-container">
+{% comment %} <div class="banner-container">
   <img src={% static 'assets/banner-img.jpg'%} class='banner-img'/>
   <div class="main-conference-wrapper">
     <h1 class="main-header">Conferinta RoMedinf 2023</h1>
@@ -22,18 +22,65 @@
      
     </a>
   </div>
+</div> {% endcomment %}
+
+<div class='banner-container'>
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      {%for content in slider_content%}
+      <div class="swiper-slide slide">
+        <div class="slide-content">  
+          {%if content.img_url%}
+          <img src='{{content.img_url.url}}' class='banner-img '/>
+          {%else%}
+          <img src={% static 'assets/banner-img.jpg'%} class='banner-img '/>
+          {%endif%}
+          <div class='content-wrapper'>
+
+            <h1 class='slider-header slide-in-fwd-top'>{{content.title}}</h1>
+            <h4 class='slider-text fade-in'>{{content.event_description}}</h4>
+            <a href="" target="_blank" class="btn btn-outline main-btn slide-in-bottom">
+              View More
+           </a>
+          </div>
+          <span class='scroll-down'></span>
+          </div>
+      </div>
+      {%endfor%}
+      {% comment %} <div class="swiper-slide slide">
+        <div class="slide-content">  
+          <img src={% static 'assets/banner-img2.jpg'%} class='banner-img'/>
+          <div class='content-wrapper'>
+          <h1 class='slider-header'>Slide content</h1></div>
+        </div>
+      </div> {% endcomment %}
+      {% comment %} <div class="swiper-slide slide_3">
+        <div class="slide-content">Slide 3</div>
+      </div>
+      <div class="swiper-slide slide_4">
+        <div class="slide-content">Slide 4</div>
+      </div>
+      <div class="swiper-slide slide_5">
+        <div class="slide-content">Slide 5</div>
+      </div> {% endcomment %}
+    </div>
+  </div>
+<div class="swiper-pagination"></div>
+<div class="swiper-scrollbar"></div>
+<div class="swiper-button-next"></div>
+<div class="swiper-button-prev"></div>
 </div>
 
-<h1 class='title'>SE APROPIE DE CONFERINȚE</h1>
+<h1 class='title'>Noutati de la SRIM</h1>
 
 <div class="cards-container">
-  {% for conference in conferences %}
+  {% for post in blog_posts %}
   <div class="card">
-    {%if conference.imgUrl%}
+    {%if post.post_img%}
     <img
-      src="{{conference.imgUrl.url}}"
+      src="{{post.post_img.url}}"
       class="card-img-top"
-      alt="{{conference.name}}"
+      alt="{{conference.title}}"
     />
     {%else%}
     <img
@@ -43,20 +90,39 @@
     />
     {%endif%}
     <div class="card-body">
-      <h5 class="card-title">{{conference.name}}</h5>
-      <h6>{{conference.dateStart}} - {{conference.dateEnd}}</h6>
-      <p class="card-text">{{conference.description}}</p>
+      <h5 class="card-title">{{post.title}}</h5>
+      <h6 class='created-at'>{{post.created_at}}</h6>
 
-        <a
-          href="{{conference.link}}"
-          target="_blank"
-          class="btn btn-outline-primary"
-          >linkul conferinței</a
-        >
-
+      <a href="{{ post.get_absolute_url }}" class="post-link">CONTINUE READING</a>
     </div>
   </div>
   {% endfor %%}
+</div>
+
+<div class='other-posts-wrapper'>
+  <a class="btn other-posts" href="/blog" role="button">
+    See Other Posts
+  </a>
+</div>
+
+  <div class='main-container'>
+    <div class="form-container">
+      <h2>Verificați conferințele care se apropie</h2>
+      <form method="post" class="form-grid">
+        {% csrf_token %}
+          <div>
+              <label for="start_date">Start Date</label>
+              <input type="date" class="form-control" id="start_date" name="start_date" required>
+          </div>
+          <div>
+              <label for="end_date">End Date</label>
+              <input type="date" class="form-control" id="end_date" name="end_date" required>
+          </div>
+          <button type="submit" class="btn btn-primary mb-2">Check</button>
+      </form>
+
+
+  </div>
   <div class='links-container text-center'>
     <h2>Linkuri</h2>
     <div class="list-group">
@@ -71,6 +137,7 @@
       <a href="https://www.ms.ro/ro/" target="_blank"  class="list-group-item list-group-item-action">Ministerul Sănătăţii</a>
       <a href="https://www.comunicatii.gov.ro/" target="_blank"  class="list-group-item list-group-item-action">Ministerul pentru Societatea Informaţională</a>
     </div>
+  </div>
   </div>
   
 
